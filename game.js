@@ -23,7 +23,7 @@ function startGame() {
 	lettersIntakenWord = takenWord.split(""); // The word is broken into individual letters.
 	blanks = lettersIntakenWord.length; //we count the number of letters in the word.
 
-	console.log(takenWord); // (for testing)
+	// console.log(takenWord); // (for testing)
 
 	blanksAndSuccesses = []; // to resest.
 	wrong = []; // reset wrong words.
@@ -31,9 +31,6 @@ function startGame() {
 	for (var i=0; i<blanks; i++){
 		blanksAndSuccesses.push("_");
 	}
-
-	console.log(blanksAndSuccesses); //inital blanks.
-
 	
 	document.getElementById("guessesLeft").innerHTML = numGuesses;
 	
@@ -65,7 +62,6 @@ function checkLetters (letter) {
 				blanksAndSuccesses[i] = letter; 
 			}
 		}
-		console.log(blanksAndSuccesses); //if find in the array word then print that.
 	}
 
 	else{
@@ -76,8 +72,6 @@ function checkLetters (letter) {
 } 
 function roundComplete(){
 
-	
-	console.log("WinCount: " + winCounter + " | LossCount: " + lossCounter + " | NumGuesses: " + numGuesses);
 
 	//update the HTML
 	document.getElementById("guessesLeft").innerHTML= numGuesses;
@@ -87,7 +81,7 @@ function roundComplete(){
 		if (lettersIntakenWord.toString() == blanksAndSuccesses.toString()) {
 			winCounter++; 
 			
-			alert(); // alert the user that user won.
+			alert("You Win"); // alert the user that user won.
 			document.getElementById("winCounter").innerHTML= winCounter;
 			startGame(); //to restart
 		}
