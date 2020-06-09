@@ -1,4 +1,5 @@
 # hangman_game
+## To play the game run the index.html file
 ## Rules to play game
 ### 1. Random junk food word will be picked.
 ### 2. User have to think that word. 
